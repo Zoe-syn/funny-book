@@ -1,0 +1,51 @@
+{
+  "clearInfo": {
+    "clearUrl": "api/clear.json"
+  },
+  "homeInfo": {
+    "title": "首页",
+    "icon": "fa fa-home",
+    "href": "sl"
+  },
+  "logoInfo": {
+    "title": "Manager",
+    "image": "images/logo.png",
+    "href": "/"
+  },
+  "menuInfo": {
+    "currency": {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "child": [
+      
+        {
+          "title": "用戶查詢",
+          "href": "table",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "郵件通知",
+          "href": "form-step",
+          "icon": "fa fa-calendar",
+          "target": "_self"
+          
+        },
+        {
+          "title": "异常页面",
+          "href": "",
+          "icon": "fa fa-home",
+          "target": "_self",
+          "child": [
+            {
+              "title": "404页面",
+              "href": "404",
+              "icon": "fa fa-hourglass-end",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

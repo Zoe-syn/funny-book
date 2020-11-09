@@ -1,0 +1,135 @@
+@charset "utf-8";
+body {
+	background-color: #FCFCFC;
+}
+
+dl,
+dd {
+	margin: 0;
+}
+
+#box {
+	width: 850px;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 0 10px rgba(73,66,66,.1);
+	margin: 50px auto;
+	border: 1px solid #00bc6f;
+}
+
+#box dl {
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px dashed #00bc6f;
+	margin: 0 20px;
+}
+
+#box dt {
+	float: left;
+        font-size: 16px;
+	color: goldenrod;
+}
+
+#box dd {
+	float: left;
+	color: #252525;
+	margin: 0 10px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+#box dd.active {
+	color:#00bc6f;
+	font-weight: bold;
+}
+
+#box dl.select {
+	background: #00bc6f;
+	margin: 0;
+	padding: 0 20px;
+}
+
+#box dl.select dd{
+	border: 1px solid #c4284d;
+	height: 25px;
+	line-height: 25px;
+	margin-top: 13px;
+	padding: 0 2px 0 10px;
+	border-radius: 3px;background-color:#00bc6f;
+}
+#box dl.select dd span{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+	line-height: 20px;
+	background: #00bc6f;
+	color: #00bc6f;
+	margin-left: 10px;
+	cursor: pointer;border-radius: 5px;
+}
+/*筛选出来的商品图片*/
+.图片{
+    background-color:#fcf4f6;
+    height: 800px;
+    width: 800px;
+    margin-left: 410px;
+    margin-top:-700px;
+}
+.tupian a{
+    color:#666;
+    text-decoration:none;
+    margin:5px;
+    font-size:20px;
+}
+.tupian a:hover{
+    color:green;
+    text-decoration:none;
+}
+.tupian table{
+    border-collapse:collapse;
+    border: #c40000;
+}	
+.tupian td{
+    border:none;
+    padding:20px 20px 5px 20px;
+    text-align:center;
+    width:140px;/*图片之间的宽度*/    
+    height:210px;
+}	
+
+.tupian th p{
+    border:2px solid #FFF;
+    margin:60px 30px;
+    padding:10px;
+    width:160px;
+    color:#FFF;
+    font-weight:lighter;
+    font-size:18px;
+}
+.tupian th a:hover{
+    color:#FFF;
+}			
+.tupian td img{
+    width:150px;
+    height:200px; 
+}
+.tupian td p{
+    font-size:12px;
+    width: 120px;
+}	
+.tupian td h6{
+    margin:5px;
+}
+.tupian {
+    height: 30px;
+    width: 60px;
+    /*    position: absolute;*/
+    font-size: 10px;
+    background-color: #a8906b;
+    color: white;
+    margin-left: 15px;
+    top: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}        

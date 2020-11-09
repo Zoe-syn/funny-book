@@ -1,0 +1,16 @@
+#
+#Sat Nov 07 21:06:46 CST 2020
+com.qdu.entity.Recomment=javax.persistence.Entity
+com.qdu.entity.Buy=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.ProductCategory=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.Manager=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.Cart=javax.persistence.Entity,javax.persistence.Table
+com.qdu.controller.IndexController=org.springframework.stereotype.Component
+com.qdu.entity.Users=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.Products=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.PurchaseOrder=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.CommentUserId=javax.persistence.Embeddable
+com.qdu.entity.UserInfo=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.Massage=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.Pcomment=javax.persistence.Entity,javax.persistence.Table
+com.qdu.entity.Notice=javax.persistence.Entity,javax.persistence.Table

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+    
+    <context:component-scan base-package="com.qdu.dao,com.qdu.service,com.qdu.entity" />
+    
+    <context:property-placeholder location="classpath:jdbc_config.properties" />
+    
+    <!--1.配置数据源-->
+    <bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <!--数据源,连接池配置,hibernate属性配置都可以放到属性文件中,通过${属性名}读取属性值即可-->
+        <property name="driverClass" value="${jdbc.driverClass}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+        <property name="minPoolSize" value="${jdbc.minPoolSize}" />
+        <property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+        <property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+    </bean>
+    
+    <!--2.配置会话工厂-->
+    <bean id="mySessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="myDataSource" />
+        <property name="packagesToScan" value="com.qdu.entity" />
+        <property name="hibernateProperties">
+            <value>
+                hibernate.dialect=${hibernate.dialect}
+                hibernate.show_sql=${hibernate.show_sql}
+                hibernate.format_sql=${hibernate.format_sql}
+            </value>
+        </property>
+    </bean>
+    
+    <!--3. 配置事务管理器（transaction manager），告知spring如何帮你管理事务-->
+    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <!--事务管理器需要知道使用的会话工厂是哪个-->
+        <property name="sessionFactory" ref="mySessionFactory" />
+    </bean>
+    
+    <!--4.配置事务通知(advice)： 也就是指定哪些方法如何应用事务-->
+    <!--需要给通知定义一个id，并指定通知使用的事务管理器的id-->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <!--配置事务的属性(attribute)-->
+        <tx:attributes>
+            <tx:method name="get*" propagation="REQUIRED" read-only="true" />
+            <tx:method name="insert*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="delete*" propagation="REQUIRED" />
+            <tx:method name="add*" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+    
+    <!--5. 配置事务应用到哪些类和方法上去-->
+    <!--考虑到有可能一个业务操作需要操作多个Dao类,那么可以考虑将事务加到业务层-->
+    <aop:config>
+        <aop:pointcut id="pt1" expression="execution(* com.qdu.service.*.*(..))" />
+        <!--使用aop:advisor标记定义通知器：也就是指定哪些通知应用到哪个切入点-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pt1" />
+    </aop:config>
+
+    <tx:annotation-driven transaction-manager="txManager"/>
+</beans>
