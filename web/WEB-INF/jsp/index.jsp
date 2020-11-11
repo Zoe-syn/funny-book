@@ -19,7 +19,7 @@
                     <body>
                         <div class="header_con">
                             <div class="header">
-                                <div class="welcome fl">欢迎来到C2C!</div>
+                                <div class="welcome fl">欢迎来到三味书屋</div>
                                 <div class="fr">
                                     <div class="login_btn fl">
 
@@ -78,19 +78,19 @@
 
                                                         <div class="center_con clearfix">
                                                             <ul class="subnav fl">
-                                                                <li><a href="#model01" class="fruit">书</a></li>
-                                                                <li><a href="#model02" class="seafood">数码类</a></li>
-                                                                <li><a href="queryData/to_shaixuan" class="meet">手机类</a></li>
-                                                                <li><a href="#model04" class="egg">衣物</a></li>
-                                                                <li><a href="#model05" class="vegetables">租房</a></li>
+                                                                <li><a href="#model01" class="fruit">文学</a></li>
+                                                                <li><a href="#model02" class="seafood">科幻</a></li>
+                                                                <li><a href="queryData/to_shaixuan" class="meet">心理</a></li>
+                                                                <li><a href="#model04" class="egg">悬疑</a></li>
+                                                                <li><a href="#model05" class="vegetables">小说</a></li>
                                                                 <li><a href="#model06" class="ice">其他</a></li>
                                                             </ul>
                                                             <div class="slide fl">
                                                                 <ul class="slide_pics">
-                                                                    <li><img src="/C2C/img/other/1.png" alt="幻灯片" width="760" height="250"></li>
-                                                                    <li><img src="/C2C/img/other/2.jpg" alt="幻灯片" width="760" height="250"></li>
-                                                                    <li><img src="/C2C/img/other/3.jpg" alt="幻灯片" width="760" height="250"></li>
-                                                                    <li><img src="/C2C/img/other/4.jpg" alt="幻灯片" width="760" height="250"></li>
+                                                                    <li><img src="/funny-book/img/lunbo/lunbo1.png" alt="幻灯片" width="760" height="250"></li>
+                                                                    <li><img src="/funny-book/img/lunbo/lunbo2.jpg" alt="幻灯片" width="760" height="250"></li>
+                                                                    <li><img src="/funny-book/img/lunbo/lunbo3.jpg" alt="幻灯片" width="760" height="250"></li>
+                                                                    <li><img src="/funny-book/img/lunbo/lunbo4.jpg" alt="幻灯片" width="760" height="250"></li>
                                                                 </ul>
                                                                 <div class="prev"></div>
                                                                 <div class="next"></div>
@@ -109,22 +109,22 @@
 
                                                         <div class="list_model">
                                                             <div class="list_title clearfix">
-                                                                <h3 class="fl" id="model01">数码</h3>
-                                                                <div class="subtitle fl">
+                                                                <h3 class="fl" id="model01">文学</h3>
+<!--                                                                <div class="subtitle fl">
                                                                     <span>|</span>
                                                                     <a href="#"></a>
                                                                     <a href="#"></a>
                                                                     <a href="#"></a>
-                                                                </div>
+                                                                </div>-->
                                                                 <a href="#" class="goods_more fr" id="fruit_more">查看更多 ></a>
                                                             </div>   
                                                             <div class="goods_con clearfix">
-                                                                <div class="goods_banner fl"><img src="/C2C/img/other/数码.jpg"></div> 
+                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/数码.jpg"></div> 
                                                                 <ul class="goods_list fl">
                                                                     <c:forEach var="p" items="${list1}">
                                                                         <li>
                                                                             <h4><a href="getOne?pid=${p.pid}">${p.pname}</a></h4>
-                                                                            <a href="#"><img src="/C2C/img/digital/${p.pid}.jpg"</a>
+                                                                            <a href="#"><img src="/funny-book/img/index-book/${p.pid}.jpg"</a>
                                                                             <div class="prize">${p.pprice}</div>
                                                                         </li>
                                                                     </c:forEach>
@@ -134,22 +134,22 @@
 
                                                         <div class="list_model">
                                                             <div class="list_title clearfix">
-                                                                <h3 class="fl" id="model02">书</h3>
-                                                                <div class="subtitle fl">
+                                                                <h3 class="fl" id="model02">科幻</h3>
+<!--                                                                <div class="subtitle fl">
                                                                     <span>|</span>
                                                                     <a href="#">手机</a>
                                                                     <a href="#">平板</a>				
-                                                                </div>
+                                                                </div>-->
                                                                 <a href="#" class="goods_more fr">查看更多 ></a>
                                                             </div>
 
                                                             <div class="goods_con clearfix">
-                                                                <div class="goods_banner fl"><img src="/C2C/img/other/书.jpg"></div> 
+                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/书.jpg"></div> 
                                                                 <ul class="goods_list fl">
                                                                     <c:forEach var="p" items="${list2}">
                                                                         <li>
                                                                             <h4><a href="getOne?pid=${p.pid}">${p.pname}</a></h4>
-                                                                            <a href="#"><img src="/C2C/img/digital/${p.pid}.jpg"/></a>
+                                                                            <a href="#"><img src="/funny-book/img/index-book/${p.pid}.jpg"/></a>
                                                                             <div class="prize">${p.pprice}</div>
                                                                         </li>
                                                                     </c:forEach>
@@ -159,23 +159,23 @@
 
                                                         <div class="list_model">
                                                             <div class="list_title clearfix">
-                                                                <h3 class="fl" id="model03">手机</h3>
-                                                                <div class="subtitle fl">
+                                                                <h3 class="fl" id="model03">悬疑</h3>
+<!--                                                                <div class="subtitle fl">
                                                                     <span>|</span>
                                                                     <a href="#">华为</a>
                                                                     <a href="#">小米</a>
                                                                     <a href="#">苹果</a>
-                                                                </div>
+                                                                </div>-->
                                                                 <a href="#" class="goods_more fr">查看更多 ></a>
                                                             </div>
 
                                                             <div class="goods_con clearfix">
-                                                                <div class="goods_banner fl"><img src="/C2C/img/other/手机.jpg"></div> 
+                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/手机.jpg"></div> 
                                                                 <ul class="goods_list fl">
                                                                     <c:forEach var="p" items="${list3}">
                                                                         <li>
                                                                             <h4><a href="getOne?pid=${p.pid}">${p.pname}</a></h4>
-                                                                            <a href="#"><img src="/C2C/img/digital/${p.pid}.jpg"</a>
+                                                                            <a href="#"><img src="/funny-book/img/index-book/${p.pid}.jpg"</a>
                                                                             <div class="prize">${p.pprice}</div>
                                                                         </li>
                                                                     </c:forEach>
@@ -192,7 +192,7 @@
                                                                 <span>|</span>
                                                                 <a href="#">友情链接</a>		
                                                             </div>
-                                                            <p>CopyRight © 2019 C2C哈哈哈哈哈 All Rights Reserved</p>
+                                                            <p>CopyRight © 2019 三味书屋哈哈哈哈哈 All Rights Reserved</p>
                                                             <p>电话：155****6998    青岛TCP/IP备*******4号</p>
                                                         </div>
                                                         <script type="text/javascript" src="js/slideshow.js"></script>
