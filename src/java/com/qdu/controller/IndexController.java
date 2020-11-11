@@ -18,13 +18,12 @@ public class IndexController {
 
    
 
-//    @RequestMapping({"/index", "/"})
-//
-//    public String index(HttpServletRequest request, HttpServletResponse response) {
-//      
-//        return "index";
-//    }
+    @RequestMapping({"/index", "/"})
+
+    public String index(HttpServletRequest request, HttpServletResponse response) {
+       
+        return "index";
+    }
 
    
-
 }
