@@ -7,7 +7,7 @@ import com.qdu.entity.Users;
 //import com.qdu.service.CartService;
 //import com.qdu.service.MnoticService;
 //import com.qdu.service.ProductService;
-//import com.qdu.service.SousuoService;
+import com.qdu.service.SousuoService;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,8 +26,8 @@ public class IndexController {
 //
 //    @Autowired
 //    private MnoticService mnoticService;
-//    @Autowired
-//    private SousuoService sousuoService;
+    @Autowired
+    private SousuoService sousuoService;
 
 
     @RequestMapping({"/index", "/"})
@@ -45,11 +45,11 @@ public class IndexController {
         return "index";
     }
 
-//    @RequestMapping("/sousuo")
-//    public String Sousuo() {
-//
-//        return "sousuo";
-//    }
+    @RequestMapping("/sousuo")
+    public String Sousuo() {
+
+        return "sousuo";
+    }
 
 //    @RequestMapping("/detail")
 //    public String Detail() {
