@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Users"
     ,schema="dbo"
-    ,catalog="C2C"
+    ,catalog="FunnyBook"
 )
 public class Users  implements Serializable {
 

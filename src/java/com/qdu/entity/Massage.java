@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="Massage"
     ,schema="dbo"
-    ,catalog="C2C"
+    ,catalog="FunnyBook"
 )
 public class Massage  implements java.io.Serializable{
 

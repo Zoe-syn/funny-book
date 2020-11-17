@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Manager"
     ,schema="dbo"
-    ,catalog="C2C"
+    ,catalog="FunnyBook"
 )
 public class Manager  implements java.io.Serializable{
 

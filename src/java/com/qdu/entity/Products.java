@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Products"
     ,schema="dbo"
-    ,catalog="C2C"
+    ,catalog="FunnyBook"
 )
 public class Products  implements java.io.Serializable{
 

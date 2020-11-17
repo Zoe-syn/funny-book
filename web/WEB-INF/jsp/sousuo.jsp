@@ -83,7 +83,7 @@
 			
                       <li>
 					<h4><a href="getOne?pid=${p.pid}">${p.pname}</a></h4>
-                                        <a href="#"><img src="/C2C/img/digital/${p.pid}.jpg"</a>
+                                        <a href="#"><img src="/funny-book/img/index-book/${p.pid}.jpg"</a>
 					<div class="prize">${p.pprice}</div>
 				</li>
 	

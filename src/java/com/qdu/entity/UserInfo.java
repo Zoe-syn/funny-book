@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="UserInfo"
     ,schema="dbo"
-    ,catalog="C2C"
+    ,catalog="FunnyBook"
 )
 public class UserInfo  implements java.io.Serializable{
 

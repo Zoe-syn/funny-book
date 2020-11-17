@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Pcomment"
     ,schema="dbo"
-    ,catalog="C2C"
+    ,catalog="FunnyBook"
 )
 public class Pcomment implements Serializable {
 
