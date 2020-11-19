@@ -8,18 +8,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-            <title>C@C-首页</title>
+            <title>三味书屋-首页</title>
             <base href="${pageContext.request.contextPath}/" /> 
             <link rel="stylesheet" type="text/css" href="css/reset.css">
                 <link rel="stylesheet" type="text/css" href="css/main.css">
+                   
+
+
                     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
                     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
                     <script type="text/javascript" src="js/slide.js"></script>
+                    
+               <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#clock').countdown('2020/12/12', function(event) {
+		  $(this).html(event.strftime('%D 天 %H:%M:%S'));
+		});
+	})
+</script>
+       
+</style>
                     </head>
                     <body>
                         <div class="header_con">
                             <div class="header">
-                                <div class="welcome fl">欢迎来到三味书屋</div>
+                                <div class="welcome fl">欢迎来到funny-book!</div>
                                 <div class="fr">
                                     <div class="login_btn fl">
 
@@ -78,7 +93,7 @@
 
                                                         <div class="center_con clearfix">
                                                             <ul class="subnav fl">
-                                                                <li><a href="#model01" class="fruit">文学</a></li>
+                                                               <li><a href="#model01" class="fruit">文学</a></li>
                                                                 <li><a href="#model02" class="seafood">科幻</a></li>
                                                                 <li><a href="queryData/to_shaixuan" class="meet">心理</a></li>
                                                                 <li><a href="#model04" class="egg">悬疑</a></li>
@@ -87,44 +102,54 @@
                                                             </ul>
                                                             <div class="slide fl">
                                                                 <ul class="slide_pics">
-                                                                    <li><img src="/funny-book/img/lunbo/lunbo1.png" alt="幻灯片" width="760" height="250"></li>
-                                                                    <li><img src="/funny-book/img/lunbo/lunbo2.jpg" alt="幻灯片" width="760" height="250"></li>
-                                                                    <li><img src="/funny-book/img/lunbo/lunbo3.jpg" alt="幻灯片" width="760" height="250"></li>
-                                                                    <li><img src="/funny-book/img/lunbo/lunbo4.jpg" alt="幻灯片" width="760" height="250"></li>
+                                                                    <li><img src="/funny-book/img/other/lunbo1.png" alt="幻灯片" width="760" height="250"></li>
+                                                                    <li><img src="/funny-book/img/other/lunbo2.jpg" alt="幻灯片" width="760" height="250"></li>
+                                                                    <li><img src="/funny-book/img/other/lunbo3.jpg" alt="幻灯片" width="760" height="250"></li>
+                                                                    <li><img src="/funny-book/img/other/lunbo4.jpg" alt="幻灯片" width="760" height="250"></li>
                                                                 </ul>
                                                                 <div class="prev"></div>
                                                                 <div class="next"></div>
                                                                 <ul class="points"></ul>
                                                             </div>
-                                                            <div class="adv fl"style="background-color: #D6E9C6">
-                                                                <h1>公告</h1>
-                                                                <a href="#"><h1><c:forEach var="n" items="${list4}">
-                                                                            <li>
-                                                                                <h4><a>${n.content}</a></h4>
-
-                                                                            </li>
-                                                                        </c:forEach></h1></a>
+                                                            <div class="adv fl"   style="border-right:1px solid #E2E2E2  ; position: absolute ;top:187px; left:1062px;" >
+                                                                
+                                                                
+                                                             <div      style="margin-left: 90px  ">   <h1 style=" font-size: 18px; color:   #ce8483;font-style:  oblique;   ">公告</h1></div>
+                                                               <c:forEach var="n" items="${list4}">
+                                                                            <ul >
+                                                                                <li> <h2  style=" font-size: 16px;font-style:  inherit">${n.content}</h2></li>
+                                                                                
+                                                                                <hr>
+                                                                            </ul>
+                                                                        </c:forEach>
                                                             </div>
                                                         </div>
+                                                      <div class="container">
+	
+                                                          <div style=" margin-left: 500px; margin-top: 15px"   class="content bgcolor-8">
+                                                              <p  style=" font-size: 24px; color:  #ce8483">距离2020年12月12日还有：</p>
+		<span id="clock" style=" margin-left: 50px; font-size: 24px; color:  #ce8483;font-style:  oblique; "></span>
+	</div>
+
+</div>
+
 
                                                         <div class="list_model">
                                                             <div class="list_title clearfix">
-                                                                <h3 class="fl" id="model01">文学</h3>
-<!--                                                                <div class="subtitle fl">
+                                                                <h3 class="fl" id="model01">文学类</h3>
+                                                                <div class="subtitle fl">
                                                                     <span>|</span>
-                                                                    <a href="#"></a>
-                                                                    <a href="#"></a>
-                                                                    <a href="#"></a>
-                                                                </div>-->
+                                                                 
+                                                                </div>
                                                                 <a href="#" class="goods_more fr" id="fruit_more">查看更多 ></a>
                                                             </div>   
                                                             <div class="goods_con clearfix">
-                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/数码.jpg"></div> 
+                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/文学.jpg"></div> 
                                                                 <ul class="goods_list fl">
                                                                     <c:forEach var="p" items="${list1}">
                                                                         <li>
                                                                             <h4><a href="getOne?pid=${p.pid}">${p.pname}</a></h4>
-                                                                            <a href="#"><img src="/funny-book/img/index-book/${p.pid}.jpg"</a>
+                                                                            <a href="#"><img src="/funny-book/img/digital/${p.pid}.jpg"</a>
                                                                             <div class="prize">${p.pprice}</div>
                                                                         </li>
                                                                     </c:forEach>
@@ -134,22 +159,21 @@
 
                                                         <div class="list_model">
                                                             <div class="list_title clearfix">
-                                                                <h3 class="fl" id="model02">科幻</h3>
-<!--                                                                <div class="subtitle fl">
+                                                                <h3 class="fl" id="model02">科幻类</h3>
+                                                                <div class="subtitle fl">
                                                                     <span>|</span>
-                                                                    <a href="#">手机</a>
-                                                                    <a href="#">平板</a>				
-                                                                </div>-->
+                                                                  				
+                                                                </div>
                                                                 <a href="#" class="goods_more fr">查看更多 ></a>
                                                             </div>
 
                                                             <div class="goods_con clearfix">
-                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/书.jpg"></div> 
+                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/科幻.jpg"></div> 
                                                                 <ul class="goods_list fl">
                                                                     <c:forEach var="p" items="${list2}">
                                                                         <li>
                                                                             <h4><a href="getOne?pid=${p.pid}">${p.pname}</a></h4>
-                                                                            <a href="#"><img src="/funny-book/img/index-book/${p.pid}.jpg"/></a>
+                                                                            <a href="#"><img src="/funny-book/img/digital/${p.pid}.jpg"/></a>
                                                                             <div class="prize">${p.pprice}</div>
                                                                         </li>
                                                                     </c:forEach>
@@ -159,23 +183,21 @@
 
                                                         <div class="list_model">
                                                             <div class="list_title clearfix">
-                                                                <h3 class="fl" id="model03">悬疑</h3>
-<!--                                                                <div class="subtitle fl">
+                                                                <h3 class="fl" id="model03">心理类</h3>
+                                                                <div class="subtitle fl">
                                                                     <span>|</span>
-                                                                    <a href="#">华为</a>
-                                                                    <a href="#">小米</a>
-                                                                    <a href="#">苹果</a>
-                                                                </div>-->
+                                                                    
+                                                                </div>
                                                                 <a href="#" class="goods_more fr">查看更多 ></a>
                                                             </div>
 
                                                             <div class="goods_con clearfix">
-                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/手机.jpg"></div> 
+                                                                <div class="goods_banner fl"><img src="/funny-book/img/other/心理.jpg"></div> 
                                                                 <ul class="goods_list fl">
                                                                     <c:forEach var="p" items="${list3}">
                                                                         <li>
                                                                             <h4><a href="getOne?pid=${p.pid}">${p.pname}</a></h4>
-                                                                            <a href="#"><img src="/funny-book/img/index-book/${p.pid}.jpg"</a>
+                                                                            <a href="#"><img src="/funny-book/img/digital/${p.pid}.jpg"</a>
                                                                             <div class="prize">${p.pprice}</div>
                                                                         </li>
                                                                     </c:forEach>
@@ -192,7 +214,7 @@
                                                                 <span>|</span>
                                                                 <a href="#">友情链接</a>		
                                                             </div>
-                                                            <p>CopyRight © 2019 三味书屋哈哈哈哈哈 All Rights Reserved</p>
+                                                            <p>CopyRight © 2019 funny-book哈哈哈哈哈 All Rights Reserved</p>
                                                             <p>电话：155****6998    青岛TCP/IP备*******4号</p>
                                                         </div>
                                                         <script type="text/javascript" src="js/slideshow.js"></script>
