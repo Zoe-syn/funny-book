@@ -100,7 +100,7 @@
 			<span>|</span>
 			<a href="#">友情链接</a>		
 		</div>
-		<p>CopyRight © 2019 C2C哈哈哈哈哈 All Rights Reserved</p>
+		<p>CopyRight © 2019 funny-book哈哈哈哈哈 All Rights Reserved</p>
 		<p>电话：155****6998    青岛TCP/IP备*******4号</p>
 	</div>
         <script src="js/jquery.min.js"></script>
@@ -113,7 +113,7 @@
                                                let localhostPaht = curWwwPath.substring(0, pos);
 
                                                function checkName(value) {
-                                                   $.post(localhostPaht + '/C2C/user/checkName', 'name=' + value, (msg) => {
+                                                   $.post(localhostPaht + '/funny-book/user/checkName', 'name=' + value, (msg) => {
                                                        document.getElementById("submit").removeAttribute("disabled");
                                                        if (msg === "success") {
                                                            $("#span1").html("用户名重复");
