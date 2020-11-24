@@ -1,4 +1,4 @@
-﻿
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="layuimini-container">
-    <div class="layuimini-main">
+    <div class="layuimini-main" >
 
 
 
@@ -38,7 +38,7 @@
 
             <table id="dataTable" class="table table-hover table-striped">
                 <tr>
-                    <th>用户编号</th>
+                    <th>用户编号</th>                                      
                     <th>用户姓名</th>
 
                     <th>性别</th>
@@ -56,7 +56,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h2 class="modal-title text-danger" id="editModalLabel">编辑产品信息</h2>
+                            <h2 class="modal-title text-danger" id="editModalLabel">编辑用户信息</h2>
                         </div>
                         <div class="modal-body">
                             <form id="editForm" class="form-inline" method="post">
@@ -93,16 +93,16 @@
                         <div class="modal-body">
                             <form id="addForm" class="form-inline" method="post">
                                 <span>用户编号：</span>
-                                <input type="text" id="proId" name="uid" class="form-control" placeholder="在此输入产品名称">
+                                <input type="text" id="proId" name="uid" class="form-control" placeholder="在此输入用户编号">
                                <br><br>
                                 <span>用户姓名：</span>
-                                <input type="text" id="proName" name="uname" class="form-control" placeholder="在此输入产品名称">
+                                <input type="text" id="proName" name="uname" class="form-control" placeholder="在此输入用户姓名">
                                 <br><br>
                                 <span>性别：</span>
-                                <input type="text" id="proPrice" name="ugender" class="form-control" placeholder="在此输入产品单价">
+                                <input type="text" id="proPrice" name="ugender" class="form-control" placeholder="在此输入用户性别">
                                 <br><br>
                                 <span>电话：</span>
-                                <input type="text" id="proUnit" name="ucontact" class="form-control" placeholder="在此输入包装单位">   
+                                <input type="text" id="proUnit" name="ucontact" class="form-control" placeholder="在此输入用户电话">   
                                 <br><br>
 
                             </form>

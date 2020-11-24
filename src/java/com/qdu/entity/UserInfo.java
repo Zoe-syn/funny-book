@@ -145,7 +145,7 @@ public class UserInfo  implements java.io.Serializable{
     }
 
     
-    @Column(name="UEmail", nullable=false)
+    @Column(name="UEmail")
     public String getUemail() {
         return this.uemail;
     }
