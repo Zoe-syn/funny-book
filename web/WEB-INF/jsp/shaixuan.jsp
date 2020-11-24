@@ -70,7 +70,7 @@
 
                                                     <div class="container">
                                                         <div id="box">
-                                                            <dl>
+<!--                                                            <dl>
                                                                 <dt>品牌：</dt>
                                                                 <dd><label style="cursor: inherit"><input type="radio" name="pin" value="苹果">苹果</label></dd>
                                                                 <dd><label style="cursor: inherit"><input type="radio" name="pin" value="三星">三星</label></dd>
@@ -81,16 +81,16 @@
                                                                 <dd><label style="cursor: inherit"><input type="radio" name="pin" value="魅族">魅族</label></dd>
                                                                 <dd><label style="cursor: inherit"><input type="radio" name="pin" value="诺基亚">诺基亚</label></dd>
                                                                 <dd><label style="cursor: inherit"><input type="radio" name="pin" value="其他">其他</label></dd>
-                                                            </dl>
+                                                            </dl>-->
                                                             <dl>
                                                                 <dt>价格：</dt>
-                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="0-200">200元以下</label></dd>
-                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="200-500">200-500</label></dd>
-                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="500-800">500-800</label></dd>
-                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="800-1000">800-1000</label></dd>
-                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="1000-2000">1000-2000</label></dd>
-                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="2000-3000">2000-3000</label></dd>
-                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="3000-100000">3000以上</label></dd>
+                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="0-10">10元以下</label></dd>
+                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="10-20">10元-20元</label></dd>
+                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="20-30">20元-30元</label></dd>
+                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="30-40">30元-40元</label></dd>
+                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="40-50">40元-50元</label></dd>
+                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="50-60">50元-60元</label></dd>
+                                                                <dd><label style="cursor: inherit"><input type="radio" name="price" value="60-70">60元-70元</label></dd>
                                                             </dl>
 
                                                             <b><button id="btnQuery" class="btn btn-info" type="button" style="width: 100%;height: 50px;float: right;color: #eea236;font-size: 17px;background-color: #f0fdec;border-color: #00bc6f;">查询</button></b>
