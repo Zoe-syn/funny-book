@@ -85,6 +85,8 @@
                                                                     <li><a href="product">我要发布</a></li>
                                                                     <li class="interval">|</li>
                                                                     <li><a href="buy">我要求购</a></li>
+                                                                    <li class="interval">|</li>
+                                                                    <li><a href="queryData/to_shaixuan">筛选</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -95,7 +97,7 @@
                                                             <ul class="subnav fl">
                                                                <li><a href="#model01" class="fruit">文学</a></li>
                                                                 <li><a href="#model02" class="seafood">科幻</a></li>
-                                                                <li><a href="queryData/to_shaixuan" class="meet">心理</a></li>
+                                                                <li><a href="#model03" class="meet">心理</a></li>
                                                                 <li><a href="#model04" class="egg">悬疑</a></li>
                                                                 <li><a href="#model05" class="vegetables">小说</a></li>
                                                                 <li><a href="#model06" class="ice">其他</a></li>
@@ -114,7 +116,7 @@
                                                             <div class="adv fl"   style="border-right:1px solid #E2E2E2  ; position: absolute ;top:187px; left:1062px;" >
                                                                 
                                                                 
-                                                             <div      style="margin-left: 90px  ">   <h1 style=" font-size: 18px; color:   #ce8483;font-style:  oblique;   ">公告</h1></div>
+                                                             <div  style="margin-left: 90px  ">   <h1 style=" font-size: 18px; color:   #ce8483;font-style:  oblique;   ">公告</h1></div>
                                                                <c:forEach var="n" items="${list4}">
                                                                             <ul >
                                                                                 <li> <h2  style=" font-size: 16px;font-style:  inherit">${n.content}</h2></li>
@@ -141,7 +143,8 @@
                                                                     <span>|</span>
                                                                  
                                                                 </div>
-                                                                <a href="#" class="goods_more fr" id="fruit_more">查看更多 ></a>
+                                                             
+                                                                <a href="seeMore/findSearch?keyword=文学" class="goods_more fr" id="fruit_more">查看更多 ></a>
                                                             </div>   
                                                             <div class="goods_con clearfix">
                                                                 <div class="goods_banner fl"><img src="/funny-book/img/other/文学.jpg"></div> 
@@ -164,7 +167,7 @@
                                                                     <span>|</span>
                                                                   				
                                                                 </div>
-                                                                <a href="#" class="goods_more fr">查看更多 ></a>
+                                                                <a href="seeMore/findSearch?keyword=科幻" class="goods_more fr">查看更多 ></a>
                                                             </div>
 
                                                             <div class="goods_con clearfix">
@@ -188,7 +191,7 @@
                                                                     <span>|</span>
                                                                     
                                                                 </div>
-                                                                <a href="#" class="goods_more fr">查看更多 ></a>
+                                                                <a href="seeMore/findSearch?keyword=心理" class="goods_more fr">查看更多 ></a>
                                                             </div>
 
                                                             <div class="goods_con clearfix">

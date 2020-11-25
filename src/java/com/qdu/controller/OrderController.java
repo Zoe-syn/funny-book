@@ -56,9 +56,9 @@ public class OrderController {
             order.setPprice(j);
             clist.add(ca);
             Users u = (Users) session.getAttribute("user");
-            List<PurchaseOrder> orderlist=purchaseOrderService.getPurchaseOrderListByCid(u.getUid());
+            //List<PurchaseOrder> orderlist=purchaseOrderService.getPurchaseOrderListByCid(u.getUid());
             
-            session.setAttribute("orderListByCid",orderlist);
+            //session.setAttribute("orderListByCid",orderlist);
             
             order.setCid(u.getUid());
             order.setReceiverName(u.getUname());
