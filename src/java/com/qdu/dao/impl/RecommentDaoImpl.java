@@ -13,10 +13,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author Echo
- */
+
 @Repository
 public class RecommentDaoImpl implements RecommentDao{
 
@@ -57,6 +54,16 @@ public class RecommentDaoImpl implements RecommentDao{
                 .setFirstResult((pageNumber-1)*pageSize)
                 .setMaxResults(pageSize)
                 .list();
+    }
+
+    @Override
+    public Object insertBookComment(Recomment bookrecomment) {
+        return sessionFactory.getCurrentSession().save(bookrecomment);
+    }
+
+    @Override
+    public void updateBookComment(Recomment bookrecomment) {
+        sessionFactory.getCurrentSession().update(bookrecomment);
     }
     
 }

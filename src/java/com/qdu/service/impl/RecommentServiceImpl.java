@@ -63,4 +63,30 @@ public class RecommentServiceImpl implements RecommentService{
         }
         return userList;
     }
+
+    @Override
+    public Recomment getRecommentByBookId(int bookid) {
+        return recommentDao.getOneById(bookid);
+    }
+
+    @Override
+    public List<Recomment> getRecommentListByBookid(String bid) {
+        return recommentDao.getAllByPid(bid);
+    }
+
+    @Override
+    public Object addBookRecomment(Recomment bookrecomment) {
+         return recommentDao.insert(bookrecomment);
+    }
+
+    @Override
+    public void updateBookRecomment(Recomment bookrecomment) {
+         recommentDao.update(bookrecomment);
+    }
+
+    @Override
+    public void deleteBookRecomment(int bookid) {
+         recommentDao.deleteById(bookid);
+   
+    }
 }

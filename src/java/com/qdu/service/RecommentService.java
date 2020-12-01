@@ -10,7 +10,11 @@ public interface RecommentService {
      *
      */
      List<String> getUidByPid(String id);
-
+   Recomment getRecommentByBookId(int bookid);
+   List<Recomment> getRecommentListByBookid(String bid);
+   Object addBookRecomment(Recomment bookrecomment);
+   void updateBookRecomment(Recomment bookrecomment);
+    void deleteBookRecomment(int bookid);
     /**
      * 根据编号获取一个回复的所有信息
      *

@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
     ,schema="dbo"
     ,catalog="FunnyBook"
 )
-public class Notice  implements java.io.Serializable {
+public class Notice implements java.io.Serializable {
 
 
      private String ntcId;

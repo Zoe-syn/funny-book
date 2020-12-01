@@ -7,7 +7,7 @@ package com.qdu.dao.impl;
 
 import com.qdu.dao.PurchaseOrderDao;
 import com.qdu.entity.PurchaseOrder;
-import com.qdu.id.cartId;
+import com.qdu.id.shoppingCheId;
 import java.util.Date;
 import java.util.List;
 import org.hibernate.SessionFactory;
@@ -15,10 +15,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author lihexiao
- */
+
 @Repository
 public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
 
@@ -27,7 +24,7 @@ public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
 
     @Override
     public Object insert(PurchaseOrder order) {
-        order.setOrderId(cartId.getCartIdCode());
+        order.setOrderId(shoppingCheId.getShoppingCheIdCode());
         Date date = new Date();// 获取当前时间 
         order.setOrderDate(date);
         return sessionFactory.getCurrentSession().save(order);
@@ -69,6 +66,50 @@ public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
                 .setMaxResults(pageSize) //设置当前页获取的记录条数
                 .list();
 
+    }
+
+    @Override
+    public Object insertBookOrder(PurchaseOrder bookorder) {
+         bookorder.setOrderId(shoppingCheId.getShoppingCheIdCode());
+         Date date = new Date();// 获取当前时间 
+        bookorder.setOrderDate(date);
+        return sessionFactory.getCurrentSession().save(bookorder);
+    }
+
+    @Override
+    public void updateBookOrder(PurchaseOrder bookorder) {
+         sessionFactory.getCurrentSession().update(bookorder);
+    }
+
+    @Override
+    public void deleteByBookId(String Bookid) {
+        PurchaseOrder booksorder = sessionFactory.getCurrentSession().get(PurchaseOrder.class, Bookid);
+        sessionFactory.getCurrentSession().delete(booksorder);
+    }
+
+    @Override
+    public void deleteBybookName(String bookname) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public PurchaseOrder getOneByBookName(String bookname) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public PurchaseOrder getOneByBookId(String bookid) {
+        return sessionFactory.getCurrentSession().get(PurchaseOrder.class, bookid);
+    }
+
+    @Override
+    public List<PurchaseOrder> getAllBook() {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public List<PurchaseOrder> getAllBookOrder() {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
 }

@@ -15,17 +15,19 @@ import javax.servlet.http.HttpSession;
  */
 public interface PurchaseOrderService {
     PurchaseOrder getPurchaseOrderById(String id);
-
+    PurchaseOrder getPurchaseBookOrderById(String orderid);
+    List getPurchaseBookOrderList();
+     List getPurchaseBookOrderListByCid(String bid);
     List getPurchaseOrderList();
     
     List getPurchaseOrderListByCid(String cid);
 
     Object addPurchaseOrder(PurchaseOrder order);
-
+     Object addPurchaseBookOrder(PurchaseOrder bookorder);
     void updatePurchaseOrder(PurchaseOrder order);
-
+    void updatePurchaseBookOrder(PurchaseOrder bookorder);
     void deletePurchaseOrder(String id);
-
+     void deletePurchaseBookOrder(String bookid);
     List getListByPageNumberAndSize(int pageNumber, int pageSize);
     
 }

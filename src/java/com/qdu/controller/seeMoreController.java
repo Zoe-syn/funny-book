@@ -5,8 +5,8 @@
  */
 package com.qdu.controller;
 
-import com.qdu.entity.Products;
-import com.qdu.service.SousuoService;
+import com.qdu.entity.Merchandises;
+import com.qdu.service.SearchService;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +22,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/seeMore")
 public class seeMoreController {
       @Autowired
-    private SousuoService sousuoService;
+    private SearchService sousuoService;
 
     @GetMapping("/findSearch")
     
     public String findsearch(HttpSession session,String keyword){
         
-        List<Products> sp=sousuoService.getSearchProductList(keyword);
+        List<Merchandises> sp=sousuoService.getSearchMerchandiseList(keyword);
         session.setAttribute("plist", sp);
 
 

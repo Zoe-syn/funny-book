@@ -22,14 +22,22 @@ public interface BuyDao {
     //根据产品编号删除单个产品
     void deleteById(String id);
 
+     //根据产品名称删除单个产品
+    void deleteByName(String bookname);
+    
     //根据产品编号查询单个产品
     Buy getOneById(String id);
 
+    //根据产品名称查询单个产品
+    Buy getOneByName(String bookname);
+    
     //获取所有产品的列表
     List<Buy> getAll();
 
-    //根据页码和每页记录数量查询指定的产品列表
+//    根据页码和每页记录数量查询指定的产品列表
     List<Buy> getListByPageNumberAndSize(int pageNumber, int pageSize);
+    
+    
 }
     
 

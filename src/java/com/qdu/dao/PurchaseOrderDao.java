@@ -16,22 +16,44 @@ import javax.servlet.http.HttpSession;
 public interface PurchaseOrderDao {
      Object insert(PurchaseOrder order);
 
+         Object insertBookOrder(PurchaseOrder bookorder);
+     
     //传入一个包含更新后的产品信息的Product对象，更新产品信息到数据库
     void update(PurchaseOrder order);
+    
+    
+
+ 
+    void updateBookOrder(PurchaseOrder bookorder);
 
     //根据产品编号删除单个产品
     void deleteById(String id);
 
+     void deleteByBookId(String Bookid);
+     
+    void deleteBybookName(String bookname);
+    
     //根据产品编号查询单个产品
     PurchaseOrder getOneById(String id);
+    
+
+    PurchaseOrder getOneByBookName(String bookname);
+    
+     PurchaseOrder getOneByBookId(String bookid);
 
     //获取所有产品的列表
     List<PurchaseOrder> getAll();
     
+    List<PurchaseOrder> getAllBook();
+    
     List<PurchaseOrder> getAllByCid(String cid);
+     
 
-    //根据页码和每页记录数量查询指定的产品列表
-    List<PurchaseOrder> getListByPageNumberAndSize(int pageNumber, int pageSize);
+   
+    List<PurchaseOrder> getAllBookOrder();
+    
+     List<PurchaseOrder> getListByPageNumberAndSize(int pageNumber, int pageSize);
+
 }
     
 

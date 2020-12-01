@@ -69,4 +69,34 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
         return purchaseOrderDao.getListByPageNumberAndSize(pageNumber, pageSize);
     }
 
+    @Override
+    public PurchaseOrder getPurchaseBookOrderById(String orderid) {
+         return purchaseOrderDao.getOneById(orderid);
+    }
+
+    @Override
+    public List getPurchaseBookOrderList() {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public List getPurchaseBookOrderListByCid(String bid) {
+      return purchaseOrderDao.getAllByCid(bid);
+    }
+
+    @Override
+    public Object addPurchaseBookOrder(PurchaseOrder bookorder) {
+           return purchaseOrderDao.insert(bookorder);
+    }
+
+    @Override
+    public void updatePurchaseBookOrder(PurchaseOrder bookorder) {
+        purchaseOrderDao.update(bookorder);
+    }
+
+    @Override
+    public void deletePurchaseBookOrder(String bookid) {
+        purchaseOrderDao.deleteById(bookid);
+    }
+
 }

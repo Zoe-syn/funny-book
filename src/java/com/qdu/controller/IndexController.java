@@ -1,16 +1,16 @@
 package com.qdu.controller;
 
-import com.qdu.entity.Cart;
+import com.qdu.entity.ShoppingChe;
 import com.qdu.entity.Notice;
-import com.qdu.entity.Products;
+import com.qdu.entity.Merchandises;
 import com.qdu.entity.PurchaseOrder;
-import com.qdu.entity.Users;
-import com.qdu.service.CartService;
+import com.qdu.entity.Subscribers;
+import com.qdu.service.ShoppingCheService;
 import com.qdu.service.MnoticService;
-import com.qdu.service.ProductService;
+import com.qdu.service.MerchandiseService;
 import com.qdu.service.PurchaseOrderService;
-import com.qdu.service.SousuoService;
-import com.qdu.service.UserInfoService;
+import com.qdu.service.SearchService;
+import com.qdu.service.SubscriberInfoService;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,32 +23,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
     @Autowired
-    private ProductService productService;
+    private MerchandiseService productService;
     @Autowired
-    private CartService cartService;
+    private ShoppingCheService cartService;
 
     @Autowired
     private MnoticService mnoticService;
     @Autowired
-    private SousuoService sousuoService;
+    private SearchService sousuoService;
     
       @Autowired
     private PurchaseOrderService purchaseOrderService;
  
     @Autowired
-    private UserInfoService userInfoService;
+    private SubscriberInfoService userInfoService;
  
-//    @RequestMapping({"/index2"})
-//    public String index2() {
-//        return "index2";
-//    }
+
 
     @RequestMapping({"/index", "/"})
 
     public String index(HttpServletRequest request, HttpServletResponse response) {
-        List<Products> list1 = productService.getDigitalList();
-        List<Products> list2 = productService.getBookList();
-        List<Products> list3 = productService.getMpbileProductsList();
+        List<Merchandises> list1 = productService.getDigitalList();
+        List<Merchandises> list2 = productService.getBookList();
+        List<Merchandises> list3 = productService.getMpbileMerchandisesList();
         List<Notice> list4 = mnoticService.getNoticeList();
 
         request.setAttribute("list1", list1);
@@ -90,9 +87,9 @@ public class IndexController {
     }
 
     @RequestMapping("/to_cart")
-    public String Cart(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
-        Users u = (Users) session.getAttribute("user");
-        List<Cart> list = cartService.getCartList(u.getUid());
+    public String ShoppingChe(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+        Subscribers u = (Subscribers) session.getAttribute("user");
+        List<ShoppingChe> list = cartService.getShoppingCheList(u.getUid());
         request.setAttribute("list", list);
         return "cart";
     }
@@ -194,7 +191,7 @@ public class IndexController {
     @RequestMapping("/totalOrder")
     public String tOrder(HttpSession session) {
          PurchaseOrder order=new PurchaseOrder();
-            Users u = (Users) session.getAttribute("user");
+            Subscribers u = (Subscribers) session.getAttribute("user");
           
          List<PurchaseOrder> orderlist=purchaseOrderService.getPurchaseOrderListByCid(u.getUid());
             

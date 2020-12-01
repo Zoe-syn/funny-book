@@ -1,4 +1,4 @@
-/*
+   /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -8,12 +8,12 @@ package com.qdu.controller;
 import com.qdu.dao.BuyDao;
 import com.qdu.entity.Buy;
 import com.qdu.entity.Notice;
-import com.qdu.entity.Products;
+import com.qdu.entity.Merchandises;
 import com.qdu.service.BuyService;
-import com.qdu.service.CartService;
+import com.qdu.service.ShoppingCheService;
 import com.qdu.service.MnoticService;
-import com.qdu.service.ProductService;
-import com.qdu.service.UserService;
+import com.qdu.service.MerchandiseService;
+import com.qdu.service.SubscriberService;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -35,11 +35,11 @@ public class BuyController {
     private BuyService buyService;
     
     @Autowired
-    private UserService userService;
+    private SubscriberService userService;
     @Autowired
-    private ProductService productService;
+    private MerchandiseService productService;
     @Autowired
-    private CartService cartService;
+    private ShoppingCheService cartService;
     @Autowired
     private MnoticService mnoticService;
  
@@ -57,6 +57,30 @@ public class BuyController {
          
     }
     
+        @PostMapping("/editBuy")
+    @ResponseBody
+    public void editBuy(String id){
+         buyService.deleteBuy(id);
+         
+    }
+        @PostMapping("/hhhedit")
+    @ResponseBody
+    public void hhhedit(String id){
+         buyService.deleteBuy(id);
+         
+    }    @PostMapping("/qqqquey")
+    @ResponseBody
+    public void qqqquey(String id){
+         buyService.deleteBuy(id);
+         
+    }
+        @PostMapping("/minBuy")
+    @ResponseBody
+    public void minBuy(String id){
+         buyService.deleteBuy(id);
+         
+    }
+    
     @PostMapping("/buy")
     public String insert(Buy buy,String productName,String productBrand,Integer productLower,Integer productHigher,String productDesc,HttpServletRequest request){
         buy.setBhigher(productHigher);
@@ -67,11 +91,11 @@ public class BuyController {
         buyService.addBuy(buy);
         System.out.println(buy.getPname());
         System.out.println("okkkkkkkkkkkkkkkkkkkkkkkkkkk");
-           List<Products> list2 = productService.getBookList();
+           List<Merchandises> list2 = productService.getBookList();
             request.setAttribute("list2", list2);
-            List<Products> list1 = productService.getDigitalList();
+            List<Merchandises> list1 = productService.getDigitalList();
             request.setAttribute("list1", list1);
-            List<Products> list3 = productService.getMpbileProductsList();
+            List<Merchandises> list3 = productService.getMpbileMerchandisesList();
             request.setAttribute("list3", list3);
             List<Notice> list4 = mnoticService.getNoticeList();
             request.setAttribute("list4", list4);

@@ -39,9 +39,7 @@ public class BuyServiceImpl implements BuyService {
  
 
     public Object addBuy(Buy buy) {
-//        String OId = (String) buy.setBuyId1(orderCode.getOrderCode());
-//        HttpSession session= sessionFactory.getCurrentSession();
-//        buyDao.insert(buy);
+
         return buyDao.insert(buy);
     } 
 
@@ -61,5 +59,15 @@ public class BuyServiceImpl implements BuyService {
     @Override
     public List getListByPageNumberAndSize(int pageNumber, int pageSize) {
         return buyDao.getListByPageNumberAndSize(pageNumber, pageSize);
+    }
+
+    @Override
+    public void deleteBuyBook(String bookid) {
+         buyDao.deleteById(bookid);
+    }
+
+    @Override
+    public void updateBuyBook(Buy buybooks) {
+          buyDao.update(buybooks);
     }
 }

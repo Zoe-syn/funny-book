@@ -23,7 +23,10 @@ public interface BuyService {
     void updateBuy(Buy buy);
 
     void deleteBuy(String id);
+   
 
     List getListByPageNumberAndSize(int pageNumber, int pageSize);
     
+     void deleteBuyBook(String bookid);
+     void updateBuyBook(Buy buybooks);
 }

@@ -5,14 +5,14 @@
  */
 package com.qdu.controller;
 
-import com.qdu.entity.Cart;
-import com.qdu.entity.Products;
+import com.qdu.entity.ShoppingChe;
+import com.qdu.entity.Merchandises;
 import com.qdu.entity.PurchaseOrder;
-import com.qdu.entity.Users;
-import com.qdu.service.CartService;
-import com.qdu.service.ProductService;
+import com.qdu.entity.Subscribers;
+import com.qdu.service.ShoppingCheService;
+import com.qdu.service.MerchandiseService;
 import com.qdu.service.PurchaseOrderService;
-import com.qdu.service.UserInfoService;
+import com.qdu.service.SubscriberInfoService;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -29,11 +29,11 @@ public class OrderController {
     @Autowired
     private PurchaseOrderService purchaseOrderService;
     @Autowired
-    private CartService cartService;
+    private ShoppingCheService cartService;
     @Autowired
-    private UserInfoService userInfoService;
+    private SubscriberInfoService userInfoService;
     @Autowired
-    private ProductService productService;
+    private MerchandiseService productService;
     
     List clist = new ArrayList();
     List olist = new ArrayList();
@@ -43,19 +43,19 @@ public class OrderController {
     @PostMapping("/addOrder")
     public String insert(HttpSession session, HttpServletRequest req) {
         // purchaseOrderService
-        String[] a = req.getParameterValues("getCart");
+        String[] a = req.getParameterValues("getShoppingChe");
        
         BigDecimal total=new BigDecimal("0.0");
         for (String b : a) {
             PurchaseOrder order=new PurchaseOrder();
-            Cart ca = cartService.getCartById(b);
+            ShoppingChe ca = cartService.getShoppingCheById(b);
             order.setPid(ca.getPid());
             BigDecimal price=ca.getCprice();
             int quantity=ca.getCquantity();
             BigDecimal j=price.multiply(new BigDecimal(quantity));
             order.setPprice(j);
             clist.add(ca);
-            Users u = (Users) session.getAttribute("user");
+            Subscribers u = (Subscribers) session.getAttribute("user");
             //List<PurchaseOrder> orderlist=purchaseOrderService.getPurchaseOrderListByCid(u.getUid());
             
             //session.setAttribute("orderListByCid",orderlist);
@@ -63,8 +63,8 @@ public class OrderController {
             order.setCid(u.getUid());
             order.setReceiverName(u.getUname());
             order.setPstatus("未支付");
-            order.setBuyerAddress(userInfoService.getUserInfoById(u.getUid()).getUaddress());
-            order.setBuyerPhone(userInfoService.getUserInfoById(u.getUid()).getUcontact());
+            order.setBuyerAddress(userInfoService.getSubscriberInfoById(u.getUid()).getUaddress());
+            order.setBuyerPhone(userInfoService.getSubscriberInfoById(u.getUid()).getUcontact());
             
             total=total.add(j);
             System.out.println("total-----------"+total);
@@ -72,7 +72,7 @@ public class OrderController {
             olist.add(order);
             
             //根据pid查商品
-//            Products p=productService.getProductsById(order.getPid());
+//            Merchandises p=productService.getMerchandisesById(order.getPid());
 //            plist.add(p);
 //            session.setAttribute("plist", plist);
         }
@@ -84,7 +84,7 @@ public class OrderController {
         
         session.setAttribute("total", total);
      
-//        Cart cart = (Cart) session.getAttribute("cart");
+//        ShoppingChe cart = (ShoppingChe) session.getAttribute("cart");
         Iterator it = olist.iterator();
         while(it.hasNext()) {
             System.out.println("__________________----");
@@ -97,7 +97,7 @@ public class OrderController {
         }
         
          for (String b : a) {
-             cartService.deleteCart(b);
+             cartService.deleteShoppingChe(b);
              System.out.println("删除成功！");
          }
 //            TorderItem orderItem = (TorderItem) it.next();

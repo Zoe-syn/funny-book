@@ -6,9 +6,9 @@
 package com.qdu.controller;
 
 import com.qdu.entity.Notice;
-import com.qdu.entity.Products;
-//import com.qdu.service.MnoticService;
-//import com.qdu.service.ProductService;
+import com.qdu.entity.Merchandises;
+import com.qdu.service.MnoticService;
+import com.qdu.service.MerchandiseService;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -23,10 +23,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LogoutController {
 
-//    @Autowired
-//    private ProductService productService;
-//    @Autowired
-//    private MnoticService mnoticService;
+    @Autowired
+    private MerchandiseService productService;
+    @Autowired
+    private MnoticService mnoticService;
 
     @RequestMapping("/logout")
     public String logout(HttpServletRequest req) throws Exception {
@@ -37,15 +37,15 @@ public class LogoutController {
             session.invalidate(); //调用invalidate()方法可以立刻让会话结束
         }
 
-//        List<Products> list2 = productService.getBookList();
-//        req.setAttribute("list2", list2);
-//        List<Products> list1 = productService.getDigitalList();
-//        req.setAttribute("list1", list1);
-//        List<Products> list3 = productService.getMpbileProductsList();
-//        req.setAttribute("list3", list3);
-//        List<Notice> list4 = mnoticService.getNoticeList();
-//        req.setAttribute("list4", list4);
-//        //退出登录后回到首页
+        List<Merchandises> list2 = productService.getBookList();
+        req.setAttribute("list2", list2);
+        List<Merchandises> list1 = productService.getDigitalList();
+        req.setAttribute("list1", list1);
+        List<Merchandises> list3 = productService.getMpbileMerchandisesList();
+        req.setAttribute("list3", list3);
+        List<Notice> list4 = mnoticService.getNoticeList();
+        req.setAttribute("list4", list4);
+        //退出登录后回到首页
         return "index";
     }
 }

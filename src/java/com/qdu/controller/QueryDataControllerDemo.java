@@ -1,6 +1,6 @@
 package com.qdu.controller;
 
-import com.qdu.entity.Products;
+import com.qdu.entity.Merchandises;
 import com.qdu.service.QueryDataServiceDemo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class QueryDataControllerDemo {
 
     @RequestMapping("/queryDataByCondition")
     @ResponseBody
-    public List<Products> queryDataByCondition(
+    public List<Merchandises> queryDataByCondition(
             @RequestParam(value = "name", required = false, defaultValue = "") String name,
             @RequestParam(value = "price", required = false, defaultValue = "0-100000") String price
     ) {

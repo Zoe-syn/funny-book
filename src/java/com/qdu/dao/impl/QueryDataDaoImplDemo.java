@@ -1,7 +1,7 @@
 package com.qdu.dao.impl;
 
 import com.qdu.dao.QueryDataDaoDemo;
-import com.qdu.entity.Products;
+import com.qdu.entity.Merchandises;
 import java.math.BigDecimal;
 import java.util.List;
 import org.hibernate.SessionFactory;
@@ -16,8 +16,8 @@ public class QueryDataDaoImplDemo implements QueryDataDaoDemo {
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Products> getDataByCondition(String name, Integer price1, Integer price2) {
-        String hql = "from Products where 1=1";
+    public List<Merchandises> getDataByCondition(String name, Integer price1, Integer price2) {
+        String hql = "from Merchandises where 1=1";
 
         if (name != null && !name.equals("")) {
             hql += " and pname like :n";
@@ -44,7 +44,7 @@ public class QueryDataDaoImplDemo implements QueryDataDaoDemo {
         if (price2 != null) {
             query.setParameter("p2", new BigDecimal(price2));
         }
-        List<Products> list = query.list();
+        List<Merchandises> list = query.list();
         return list;
     }
 }
